@@ -4,7 +4,7 @@ from emails.email_sender import EmailSender
 from emails.templates import article_template, email_template
 
 SCRAPY_PROJECT_DIR = os.path.join(os.path.dirname(__file__), 'nieuwsscraper')
-
+""" A runnable that executes main scripts that scrape data and send emails """
 def run_spider(spider_name):
     os.chdir(SCRAPY_PROJECT_DIR)
     
