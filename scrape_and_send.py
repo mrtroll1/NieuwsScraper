@@ -30,7 +30,7 @@ def send_email(spider_name):
 if __name__ == "__main__":
     import sys
     if len(sys.argv) != 2:
-        print("Usage: python scrape_and_send.py <spider_name>")
+        print("Erros while usage: python scrape_and_send.py <spider_name>")
         sys.exit(1)
 
     spider_name = sys.argv[1]
