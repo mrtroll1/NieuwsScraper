@@ -20,7 +20,7 @@ def send_email(spider_name):
     email_sender.select_data()  
     email_sender.generate_content(article_template, email_template)
 
-    with open('recipients.txt', 'r') as recipients_file:
+    with open('/home/luka/Projects/NieuwsScraper/recipients.txt', 'r') as recipients_file:
         for recipient_email in recipients_file:
             recipient_email = recipient_email.strip()
             if recipient_email:  
