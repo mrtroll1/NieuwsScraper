@@ -8,6 +8,8 @@ article_template = """
 </div>
 """
 
+# Templates for email composing
+
 email_template = """
 <!DOCTYPE html>
 <html>
