@@ -7,6 +7,7 @@ import os
 import json
 from emails.templates import article_template, email_template
 
+"""A class for preparing and composing an email from json"""
 class EmailSender:
     SMTP_SERVER = 'smtp.gmail.com'
     SMTP_PORT = 587
