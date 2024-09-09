@@ -21,7 +21,7 @@ jobs:
           git config --global user.name "mrtroll1"
           
       - name: Deploy to server
-        uses: appleboy/ssh-action@master
+        uses: appleboy/ssh-action@main
         with:
           host: ${{ secrets.SERVER_IP }}
           username: luka
