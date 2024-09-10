@@ -20,6 +20,11 @@ jobs:
           git config --global user.email ${{ secrets.GIT_EMAIL }}
           git config --global user.name "mrtroll1"
       
+      - name: Set up virtual environment
+        run: |
+          python3 -m venv venv
+          source venv/bin/activate
+      
       - name: Upgrade pip and reinstall pyasn1-modules
         run: |
           python3 -m pip install --upgrade pip
