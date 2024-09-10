@@ -24,11 +24,15 @@ jobs:
         run: |
           python3 -m venv venv
           source venv/bin/activate
-      
+    
+      - name: Force reinstall pyasn1-modules
+        run: |
+          python3 -m pip install --ignore-installed --force-reinstall pyasn1-modules
+
+
       - name: Upgrade pip and reinstall pyasn1-modules
         run: |
           python3 -m pip install --upgrade pip
-          python3 -m pip install --ignore-installed pyasn1-modules
           
       - name: Deploy to server
         uses: appleboy/ssh-action@master
