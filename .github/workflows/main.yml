@@ -35,5 +35,5 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             git -C /home/luka/Projects/NieuwsScraper pull origin main
-            sudo pip install -r /home/luka/Projects/NieuwsScraper/requirements.txt  
+            sudo pip install -r /home/luka/Projects/NieuwsScraper/requirements.txt 
             
