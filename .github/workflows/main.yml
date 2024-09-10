@@ -31,7 +31,3 @@ jobs:
           script: |
             git -C /home/luka/Projects/NieuwsScraper pull origin main
             sudo pip install -r /home/luka/Projects/NieuwsScraper/requirements.txt  
-            sudo systemctl restart dagelijks-politiek.service
-            sudo systemctl restart dagelijks-politiek.timer
-            sudo systemctl restart wekelijks-tech.service
-            sudo systemctl restart wekelijks-tech.timer
