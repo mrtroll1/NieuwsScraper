@@ -85,6 +85,10 @@ class EmailSender:
         with smtplib.SMTP(self.SMTP_SERVER, self.SMTP_PORT) as server:
             server.starttls()
             server.login(self.USERNAME, self.PASSWORD)
-            server.sendmail(msg['From'], msg['To'], msg.as_string())
+            try:
+                server.sendmail(msg['From'], msg['To'], msg.as_string())
+                print('Email sent successfully!')
+            except Exception as e:
+                print(f"Failed to send email to {to_email}: {e}")
 
-        print('Email sent successfully!')
+        
