@@ -24,14 +24,17 @@ def was_email_sent_last_hour():
                 return True
     return False
 
-def update_last_email_sent_timestamp():
-    """Update the file to store the current timestamp after sending the email."""
-    with open(LAST_EMAIL_FILE, 'w') as f:
-        current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        f.write(current_time)
-
 if was_email_sent_last_hour():
         sys.exit(0)
+
+def update_last_email_sent_timestamp():
+    """Update the file to store the current timestamp after sending the email."""
+    temp_file = '/tmp/last_email_sent.tmp'
+    with open(temp_file, 'w') as f:
+        current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        f.write(current_time)
+    
+    os.replace(temp_file, LAST_EMAIL_FILE)
 
 SCRAPY_PROJECT_DIR = os.path.join(os.path.dirname(__file__), 'nieuwsscraper')
 
@@ -62,7 +65,7 @@ def send_email(spider_name):
                 env_var_name = recipient_email[2:-2].strip()
                 recipient_email = os.getenv(env_var_name)
 
-            if recipient_email:  # Ensure it's not empty after replacement
+            if recipient_email:  
                 email_sender.send_email(recipient_email)
 
 if __name__ == "__main__":
