@@ -65,7 +65,8 @@ def send_email(spider_name):
                 env_var_name = recipient_email[2:-2].strip()
                 recipient_email = os.getenv(env_var_name)
 
-            if recipient_email:  
+            if recipient_email:
+                print(f"EMAIL WILL BE SENT TO {recipient_email}")  
                 email_sender.send_email(recipient_email)
 
 if __name__ == "__main__":
