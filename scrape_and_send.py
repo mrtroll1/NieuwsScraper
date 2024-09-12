@@ -30,8 +30,8 @@ def update_last_email_sent_timestamp():
         current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         f.write(current_time)
 
-#if was_email_sent_last_hour():
-#        sys.exit(0)
+if was_email_sent_last_hour():
+        sys.exit(0)
 
 SCRAPY_PROJECT_DIR = os.path.join(os.path.dirname(__file__), 'nieuwsscraper')
 
@@ -57,8 +57,12 @@ def send_email(spider_name):
 
     with open('/home/luka/Projects/NieuwsScraper/recipients.txt', 'r') as recipients_file:
         for recipient_email in recipients_file:
-            recipient_email = recipient_email.strip()
-            if recipient_email:  
+            recipient_email = recipient_email.strip()  
+            if recipient_email.startswith('{{') and recipient_email.endswith('}}'):
+                env_var_name = recipient_email[2:-2].strip()
+                recipient_email = os.getenv(env_var_name)
+
+            if recipient_email:  # Ensure it's not empty after replacement
                 email_sender.send_email(recipient_email)
 
 if __name__ == "__main__":
