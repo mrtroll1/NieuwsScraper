@@ -1,6 +1,6 @@
 article_template = """
 <div style="margin-bottom: 15px; padding: 5px; border: 0; border-radius: 5px; text-align: center; max-width: 50%; margin: 0 auto;">
-    <a href="{{ url }}" style="text-decoration: none; color: #000;">
+    <a href="{{ url }}" style="text-decoration: none; color: #000; cursor: pointer;">
         <h2 style="margin-top: 10px; font-size: 16px; text-align: center; max-width: 70%; margin: 0 auto; word-wrap: break-word;">{{ title }}</h2>
         <img src="{{ photo_url }}" alt="{{ title }}" style="width: 100%; max-width: 400px; border-radius: 5px; border: 3px solid #d17dc0; display: block; margin: 0 auto; margin-bottom: 10px;"/>
         <p style="text-align: center; max-width: 70%; margin: 0 auto; margin-bottom: 30px !important; word-wrap: break-word;">{{ description }}</p>
