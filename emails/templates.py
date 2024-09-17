@@ -1,3 +1,5 @@
+# Templates for email composing
+
 article_template = """
 <div style="margin-bottom: 15px; padding: 5px; border: 0; border-radius: 5px; text-align: center; max-width: 50%; margin: 0 auto;">
     <a href="{{ url }}" style="text-decoration: none; color: #000; cursor: pointer;">
@@ -8,8 +10,6 @@ article_template = """
 </div>
 """
 
-# Templates for email composing
-
 email_template = """
 <!DOCTYPE html>
 <html>
@@ -18,21 +18,21 @@ email_template = """
         body { font-family: Arial, sans-serif; }
         h1 { 
             color: #8c060c; 
-            margin-bottom: 3px; /* Reduce space below the h1 */
+            margin-bottom: 3px; 
             text-align: center;
         }
         p { 
             color: #787777; 
             font-size: 14px;
-            margin-top: 2px;  /* Reduce space above the p */
-            margin-bottom: 30px;  /* Optional: control space below the p */
+            margin-top: 2px;  
+            margin-bottom: 30px;  
             text-align: center;
         }
         .article { width: 40%; margin-bottom: 15px; }
         .article img { width: 100%; max-width: 600px; border-radius: 5px; border: 3px solid #d17dc0;}
         .article h2 { margin-top: 5px; font-size: 16px; }
-        a { text-decoration: none; color: #000; }  /* Ensure all links are black */
-        a:visited { color: #000 !important; }  /* Override visited link color */
+        a { text-decoration: none; color: #000; }  
+        a:visited { color: #000 !important; }  
     </style>
 </head>
 <body>
