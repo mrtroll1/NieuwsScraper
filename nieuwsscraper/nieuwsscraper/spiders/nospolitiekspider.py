@@ -1,5 +1,6 @@
 import scrapy
 from nieuwsscraper import items
+from datetime import datetime, timedelta
 
 
 class NosPolitiekSpider(scrapy.Spider):
@@ -8,20 +9,24 @@ class NosPolitiekSpider(scrapy.Spider):
     allowed_domains = ["nos.nl"]
     start_urls = ["https://nos.nl/nieuws/politiek"]
 
-    def is_today(self, article):
-        time_text = article.css('time::text').get()
+    
 
-        if time_text and 'vandaag' in time_text:
-            return True
-        else:
-            return False
+    def is_last_24hours(self, article):
+        time = article.css('time::attr(datetime)').get()
+        time = datetime.strptime(time, "%Y-%m-%dT%H:%M:%S%z")
+        
+        now = datetime.now(time.tzinfo)
+        day_ago = now - timedelta(hours=24)
+
+        return day_ago <= time <= now
+
 
     def parse(self, response):
         article_item = items.ArticleItem()
 
         base_url = "nos.nl"
         for article in response.css('ul.sc-8a121b83-0.gETdJR.sc-7e9566f5-0.friZgz > li'):
-            if self.is_today(article) == True:
+            if self.is_last_24hours(article) == True:
                 article_item['title'] = article.css('h2::text').get()
                 relative_url = article.css('a::attr(href)').get()
                 article_item['url'] = base_url + relative_url
