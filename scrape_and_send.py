@@ -1,7 +1,6 @@
 import os
 import subprocess
 from emails.email_sender import EmailSender
-from emails.templates import article_template, email_template
 import sys
 import time
 from datetime import datetime, timedelta
@@ -56,7 +55,7 @@ def send_email(spider_name):
 
     email_sender = EmailSender(spider_name, json_file)
     email_sender.select_data()  
-    email_sender.generate_content(article_template, email_template)
+    email_sender.generate_content()
 
     with open('/home/luka/Projects/NieuwsScraper/recipients.txt', 'r') as recipients_file:
         for recipient_email in recipients_file:

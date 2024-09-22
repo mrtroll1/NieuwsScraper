@@ -5,7 +5,6 @@ from jinja2 import Template
 from premailer import transform
 import os
 import json
-from emails.templates import article_template, email_template
 
 """A class for preparing and composing an email from json"""
 class EmailSender:
@@ -32,8 +31,12 @@ class EmailSender:
             self.articles = []
             self.num_rows = 0
 
-    def generate_content(self, article_template, email_template):
+    def generate_content(self):
         """Generate the email content based on the articles and templates."""
+
+        with open('/path/to/article_template.html', 'r') as file:
+            article_template = file.read()
+
         articles_content = ""
         for article in self.articles:
             template = Template(article_template)
@@ -61,8 +64,14 @@ class EmailSender:
             else:
                 header_text = f'Deze week zijn er {self.num_rows} artikelen. Veel plezier!'
 
+        with open('/path/to/email_template.html', 'r') as file:
+            email_template = file.read()
+
+        with open('/path/to/style.css', 'r') as css_file:
+            css_content = css_file.read()
+
         template = Template(email_template)
-        html_content = template.render(articles_content=articles_content, header_text=header_text, topic=topic)
+        html_content = template.render(articles_content=articles_content, header_text=header_text, topic=topic, inline_css=css_content)
 
         self.inlined_html = transform(html_content)
 

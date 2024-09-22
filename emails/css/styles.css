@@ -1,0 +1,26 @@
+body { 
+    font-family: Arial, sans-serif; 
+}
+
+h1 { 
+    color: #8c060c; 
+    margin-bottom: 3px; 
+    text-align: center;
+}
+
+p { 
+    color: #787777; 
+    font-size: 14px;
+    margin-top: 2px;  
+    margin-bottom: 30px;  
+    text-align: center;
+}
+
+.article { width: 40%; margin-bottom: 15px; }
+.article img { width: 100%; max-width: 600px; border-radius: 5px; border: 3px solid #d17dc0;}
+.article h2 { margin-top: 5px; font-size: 16px; }
+a { text-decoration: none; color: #000; }  
+a:visited { color: #000 !important; }  
+.articles h2:hover { text-decoration: underline; }
+.articles p:hover { text-decoration: underline; }
+
