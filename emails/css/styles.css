@@ -16,9 +16,9 @@ body {
     text-align: center;
 }
 
-.article { width: 40%; margin-bottom: 15px; }
-.article-image { width: 80%; max-width: 600px; border-radius: 5px; border: 3px solid #d17dc0; box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);}
-.article-title { margin-top: 5px; font-size: 16px; }
+.article { width: 60%; margin-bottom: 15px; }
+.article-image { width: 70%; max-width: 600px; border-radius: 5px; border: 3px solid #d17dc0; box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);}
+.article-title { margin-top: 5px; font-size: 16px; width: 70%}
 .article-description {
     color: #787777; 
     font-size: 14px;
