@@ -32,12 +32,21 @@ body {
     color: #000; 
     cursor: pointer;
     text-align: center;
-    
+    display: flex;  
+    justify-content: center; 
+    align-items: center; 
 }
 
 .article-url:visited { color: #000 !important; }  
 
-.article-title { margin-top: 5px; font-size: 16px; font-weight: bold; width: 70%; text-align: center;}
+.article-title { 
+    margin-top: 5px; 
+    font-size: 16px; 
+    font-weight: bold; 
+    width: 70%; 
+    text-align: center;
+    display: inline-block;
+}
 
 .article-title:hover {text-decoration: underline;}
 
