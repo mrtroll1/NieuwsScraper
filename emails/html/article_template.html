@@ -1,7 +1,7 @@
 <div class="article">
-  <a href="{{ url }}" style="text-decoration: none; color: #000; cursor: pointer;">
-      <h2 class="article-title">{{ title }}</h2>
-      <img class="article-image" src="{{ photo_url }}" alt="{{ title }}"/>
-      <p class="article-description">{{ description }}</p>
-
+  <a class='title-url' href="{{ url }}">
+    <h2 class="article-title">{{ title }}</h2>
+  </a>
+  <img class="article-image" src="{{ photo_url }}" alt="{{ title }}"/>
+  <p class="article-description">{{ description }}</p>
 </div>
