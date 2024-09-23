@@ -34,7 +34,7 @@ class EmailSender:
     def generate_content(self):
         """Generate the email content based on the articles and templates."""
 
-        with open('html/article_template.html', 'r') as file:
+        with open('/home/luka/Projects/NieuwsScraper/emails/html/article_template.html', 'r') as file:
             article_template = file.read()
 
         articles_content = ""
@@ -64,10 +64,10 @@ class EmailSender:
             else:
                 header_text = f'Deze week zijn er {self.num_rows} artikelen. Veel plezier!'
 
-        with open('html/email.html', 'r') as file:
+        with open('/home/luka/Projects/NieuwsScraper/emails/html/email.html', 'r') as file:
             email_template = file.read()
 
-        with open('css/styles.css', 'r') as css_file:
+        with open('/home/luka/Projects/NieuwsScraper/emails/css/styles.css', 'r') as css_file:
             css_content = css_file.read()
 
         template = Template(email_template)
