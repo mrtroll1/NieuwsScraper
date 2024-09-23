@@ -50,19 +50,19 @@ class EmailSender:
         if self.spider == 'nospolitiekspider':
             topic = 'politiek'
             if self.num_rows == 1:
-                header_text = f'Vandaag is er maar {self.num_rows} artikel. Veel plezier!'
+                header_text = f'Vandaag is er maar {self.num_rows} artikel.'
             elif self.num_rows == 0:
                 header_text = 'Vandaag zijn er geen artikelen.'
             else:
-                header_text = f'Vandaag zijn er {self.num_rows} artikelen. Veel plezier!'
+                header_text = f'Vandaag zijn er {self.num_rows} artikelen.'
         if self.spider == 'nostechspider':
             topic = 'tech'
             if self.num_rows == 1:
-                header_text = f'Deze week is er maar {self.num_rows} artikel. Veel plezier!'
+                header_text = f'Deze week is er maar {self.num_rows} artikel.'
             elif self.num_rows == 0:
                 header_text = 'Deze week zijn er geen artikelen.'
             else:
-                header_text = f'Deze week zijn er {self.num_rows} artikelen. Veel plezier!'
+                header_text = f'Deze week zijn er {self.num_rows} artikelen.'
 
         with open('/home/luka/Projects/NieuwsScraper/emails/html/email.html', 'r') as file:
             email_template = file.read()
