@@ -28,12 +28,13 @@ body {
 
 
 .article-url {
-    width: 70%; 
+    width: 100%;
     text-decoration: none; 
     color: #000; 
     cursor: pointer;
-    display: flex;  
     justify-content: center; 
+    align-items: center;     
+    text-align: center;    
 }
 
 .article-url:visited { color: #000 !important; }  
