@@ -32,10 +32,8 @@ body {
     text-decoration: none; 
     color: #000; 
     cursor: pointer;
-    text-align: center;
     display: flex;  
     justify-content: center; 
-    align-items: center; 
 }
 
 .article-url:visited { color: #000 !important; }  
