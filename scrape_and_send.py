@@ -23,8 +23,8 @@ def was_email_sent_last_hour():
                 return True
     return False
 
-if was_email_sent_last_hour():
-        sys.exit(0)
+#if was_email_sent_last_hour():
+       # sys.exit(0)
 
 def update_last_email_sent_timestamp():
     """Update the file to store the current timestamp after sending the email."""
