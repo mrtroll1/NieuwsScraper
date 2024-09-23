@@ -17,9 +17,9 @@ body {
 }
 
 .article { width: 40%; margin-bottom: 15px; }
-.article img { width: 80%; max-width: 600px; border-radius: 5px; border: 3px solid #d17dc0; box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);}
-.article h2 { margin-top: 5px; font-size: 16px; }
-.article p {
+.article-image { width: 80%; max-width: 600px; border-radius: 5px; border: 3px solid #d17dc0; box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);}
+.article-title { margin-top: 5px; font-size: 16px; }
+.article-description {
     color: #787777; 
     font-size: 14px;
     margin-top: 2px;  
