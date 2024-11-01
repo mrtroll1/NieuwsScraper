@@ -23,15 +23,16 @@ class NosPolitiekSpider(scrapy.Spider):
 
     def parse(self, response):
         article_item = items.ArticleItem()
-
         base_url = "nos.nl"
-        for article in response.css('ul.sc-8a121b83-0.gETdJR.sc-7e9566f5-0.friZgz > li'):
-            if self.is_last_24hours(article) == True:
+
+        for article in response.css('section > ul:first-of-type > li'):
+            if self.is_last_24hours(article):
                 article_item['title'] = article.css('h2::text').get()
                 relative_url = article.css('a::attr(href)').get()
                 article_item['url'] = base_url + relative_url
                 article_item['photo_url'] = article.css('img::attr(src)').get()
-                article_item['description'] = article.css('p.sc-350b37b9-5.fLEHMx::text').get()
+                article_item['description'] = article.css('p::text').get()
                 yield article_item
+
 
         
